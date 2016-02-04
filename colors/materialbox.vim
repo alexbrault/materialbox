@@ -446,11 +446,11 @@ if version >= 700
   hi! link CursorColumn CursorLine
 
   " Tab pages line filler
-  call s:HL('TabLineFill', s:bg4, s:vim_bg, s:invert_tabline)
+  call s:HL('TabLineFill', s:bg1, s:bg4, s:invert_tabline)
   " Active tab page label
-  call s:HL('TabLineSel', s:vim_bg, s:bg4, s:bold . s:invert_tabline)
+  call s:HL('TabLineSel', s:bg4, s:vim_bg, s:invert_tabline)
   " Not active tab page label
-  hi! link TabLine TabLineFill
+  call s:HL('TabLine', s:bg4, s:bg1, s:bold . s:invert_tabline)
 
   " Match paired bracket under the cursor
   call s:HL('MatchParen', s:none, s:bg3, s:bold)
@@ -486,7 +486,7 @@ call s:HL('StatusLineNC', s:bg2, s:fg4, s:bold . s:inverse)
 call s:HL('VertSplit', s:fg4, s:vert_split)
 
 " Current match in wildmenu completion
-call s:HL('WildMenu', s:blue, s:bg2, s:bold)
+call s:HL('WildMenu', s:gb.neutral_yellow, s:bg0, s:bold)
 
 " Directory names, special names in listing
 hi! link Directory materialboxGreenBold
