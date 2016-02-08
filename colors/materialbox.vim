@@ -18,10 +18,6 @@ endif
 
 let g:colors_name='materialbox'
 
-if !has('gui_running') && &t_Co != 256
-  finish
-endif
-
 " }}}
 " Global Settings: {{{
 
@@ -133,6 +129,8 @@ let s:gb.faded_blue     = ['#1565c0', 24]      " 7-102-120
 let s:gb.faded_purple   = ['#6a1b9a', 96]      " 143-63-113
 let s:gb.faded_aqua     = ['#303F9F', 66]      " 66-123-88
 let s:gb.faded_orange   = ['#E65100', 130]     " 175-58-3
+
+let s:gb.grey_purple    = ['#665570', 61]
 
 " }}}
 " Setup Emphasis: {{{
@@ -295,12 +293,12 @@ else
   endif
 endif
 
-let s:color_column = s:bg1
+let s:color_column = s:gb.grey_purple
 if exists('g:materialbox_color_column')
   let s:color_column = get(s:gb, g:materialbox_color_column)
 endif
 
-let s:vert_split = s:bg2
+let s:vert_split = s:bg0
 if exists('g:materialbox_vert_split')
   let s:vert_split = get(s:gb, g:materialbox_vert_split)
 endif
